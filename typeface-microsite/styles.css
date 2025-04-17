@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Stadion';
+    src: url('Stadion.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  body {
+    background: black;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  header h1 {
+    font-family: 'Stadion', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  input {
+    font-family: Anton, sans-serif;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    width: 60%;
+    max-width: 500px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    font-family: Anton, sans-serif;
+    display: block;
+    margin: 1rem auto;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  #chant-output {
+    margin-top: 2rem;
+    font-family: 'Stadion', sans-serif;
+    font-size: 4rem;
+    color: #00ffea;
+    animation: none;
+  }
+  
+  .animate {
+    animation: chantAnim 1s ease-in-out forwards;
+  }
+  
+  @keyframes chantAnim {
+    0% {
+      transform: scale(0.8) rotate(-2deg);
+      opacity: 0;
+      color: #ff0055;
+    }
+    50% {
+      transform: scale(1.2) rotate(2deg);
+      color: #ffaa00;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+      color: #00ffea;
+    }
+  }
