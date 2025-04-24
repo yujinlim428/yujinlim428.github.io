@@ -19,30 +19,21 @@
     <div id="chant-output"></div>
   </main>
 
-<script>
-  const button = document.getElementById("chant-button");
-  const input = document.getElementById("chant-input");
-  const output = document.getElementById("chant-output");
+  <script>
+    const button = document.getElementById("chant-button");
+    const input = document.getElementById("chant-input");
+    const output = document.getElementById("chant-output");
 
-  const cheerSound = new Audio("https://www.soundjay.com/human/applause-8.mp3");
-
-  button.addEventListener("click", () => {
-    const chant = input.value.trim();
-    if (chant) {
-     
-      output.innerText = `${chant.toUpperCase()}! `.repeat(3);
-
-      document.body.classList.add("flash");
-      setTimeout(() => document.body.classList.remove("flash"), 300);
-
-      output.classList.remove("animate");
-      void output.offsetWidth;
-      output.classList.add("animate");
-
-      cheerSound.currentTime = 0;
-      cheerSound.play();
-    }
-  });
-</script>
+    button.addEventListener("click", () => {
+      const chant = input.value.trim();
+      if (chant) {
+        output.innerText = chant.toUpperCase();
+        output.classList.remove("animate");
+        void output.offsetWidth; // re-trigger animation
+        output.classList.add("animate");
+      }
+    });
+    
+  </script>
 </body>
 </html>
