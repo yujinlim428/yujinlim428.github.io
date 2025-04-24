@@ -16,19 +16,24 @@
   header h1 {
     font-family: 'Stadion', sans-serif;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin: 0 auto;
+    width: fit-content;
   }
   
-  input {
-    font-family: Anton, sans-serif;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    width: 60%;
-    max-width: 500px;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
+  
+input {
+  position: relative;
+  font-family: Anton, sans-serif;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  width: 60%;
+  max-width: 500px;
+  height: 3rem;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
   
   button {
     font-family: Anton, sans-serif;
@@ -50,11 +55,16 @@
   }
   
   #chant-output {
-    margin-top: 2rem;
+    position: relative;
+    margin: 2rem auto 0;
     font-family: 'Stadion', sans-serif;
     font-size: 4rem;
-    color: #00ffea;
+    color: #ffe100;
     animation: none;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    line-height: 1.2;
   }
   
   .animate {
