@@ -108,7 +108,6 @@ body {
 }
 
 .type-title {
-  text-align: left;
   font-size: 2rem;
   font-weight: bold;
   line-height: 1.4;
@@ -117,7 +116,6 @@ body {
 }
 
 .tooltip {
-  text-align: left;
   display: block;
   margin-top: 10px;
   font-size: 0.8rem;
@@ -130,7 +128,6 @@ body {
 }
 
 .type-description {
-  text-align: left;
   font-size: 2rem;
   color: #ddd;
   margin-bottom: 1rem;
