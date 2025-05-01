@@ -25,101 +25,50 @@ body {
   line-height: 1.6;
 }
 
-/* Background Track */
-.background-track {
-  position: fixed;
+.image-overlay-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-image {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('stadium-crowd.jpg') center/cover no-repeat;
-  opacity: 0.15;
-  z-index: -1;
-  filter: blur(2px);
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.5);
 }
 
-.stadium-track {
-  width: 1000px;
-  height: 500px;
-  background: repeating-radial-gradient(
-    ellipse at center,
-    #d9534f,
-    #d9534f 15px,
-    #c9302c 15px,
-    #c9302c 30px
-  );
-  border-radius: 50% / 50%;
-  margin: 50px auto;
+.overlay-text {
   position: relative;
-  box-shadow: 0 0 60px 20px rgba(255, 87, 34, 0.5),
-              inset 0 0 20px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  transition: transform 0.5s;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 2rem;
 }
 
-/* 안쪽 트랙 라인들 */
-.stadium-track::before {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  border: 4px dashed white;
-  border-radius: 50% / 50%;
-  box-shadow:
-    inset 0 0 0 30px transparent,
-    inset 0 0 0 60px white,
-    inset 0 0 0 90px transparent,
-    inset 0 0 0 120px white,
-    inset 0 0 0 150px transparent,
-    inset 0 0 0 180px white;
+.stadium-overlay-title {
+  font-size: 4rem;
+  font-family: 'Stadion', sans-serif;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
-/* 추가 반짝임 효과 */
-.stadium-track::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50% / 50%;
-  background: repeating-radial-gradient(
-    ellipse at center,
-    transparent,
-    transparent 20px,
-    rgba(255, 255, 255, 0.05) 21px,
-    rgba(255, 255, 255, 0.05) 40px
-  );
-  animation: sparkle 3s linear infinite;
+.stadium-overlay-subtext {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
-/* 반짝임 키프레임 */
-@keyframes sparkle {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-/* 반응형 */
-@media (max-width: 1200px) {
-  .stadium-track {
-    width: 90vw;
-    height: 45vw;
-  }
-}
-
-/* 추가로 트랙이 화면에 자연스럽게 반응하도록 */
-@media (max-width: 1200px) {
-  .stadium-track {
-    width: 90vw;
-    height: 45vw;
-  }
-}
 
 /* Header Section */
 .stadium-heading {
