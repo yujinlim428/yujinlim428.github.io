@@ -96,7 +96,7 @@ body {
 
 
 .stadium-overlay-title {
-  font-size: 64px;
+  font-size: 200px;
   font-weight: bold;
 }
 
@@ -104,7 +104,7 @@ body {
 /* Typeface Introduction */
 
 .stadium-overlay-subtext {
-  font-size: 20px;
+  font-size: 12px;
 }
 
 .type-body {
