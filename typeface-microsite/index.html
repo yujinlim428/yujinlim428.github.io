@@ -38,6 +38,11 @@
       <button class="fun-button" id="chant-button" aria-label="Generate Chant">Type Your Chant</button>
     </section>
 
+
+    <section class="chant-display" aria-live="polite">
+      <div id="chant-output" class="chant-output" aria-label="Chant Output"></div>
+    </section>
+
     <section class="image-overlay-section">
       <div class="overlay-text">
         <h2 class="stadium-overlay-title">STADION</h2>
@@ -45,9 +50,7 @@
       </div>
     </section>
 
-    <section class="chant-display" aria-live="polite">
-      <div id="chant-output" class="chant-output" aria-label="Chant Output"></div>
-    </section>
+    
   </main>
 
   <!-- Typeface Introduction Section -->
@@ -56,24 +59,26 @@
 </section>
 
 
-  <!-- Chant Generator Script -->
-  <script>
-    const button = document.getElementById("chant-button");
-    const input = document.getElementById("chant-input");
-    const output = document.getElementById("chant-output");
+ <!-- Chant Generator Script -->
+ <script>
+  const button = document.getElementById("chant-button");
+  const input = document.getElementById("chant-input");
+  const output = document.getElementById("chant-output");
 
-    button.addEventListener("click", () => {
-      const chant = input.value.trim();
-      if (chant) {
-        output.innerText = chant.toUpperCase();
-        output.classList.remove("animate");
-        void output.offsetWidth; // forces reflow for animation restart
-        output.classList.add("animate");
-      } else {
-        output.innerText = "⚠️ Please enter a chant!";
-      }
-    });
-  </script>
+
+  button.addEventListener("click", () => {
+    const chant = input.value.trim();
+    if (chant) {
+      output.innerText = chant.toUpperCase();
+      output.classList.remove("animate");
+      void output.offsetWidth; // forces reflow for animation restart
+      output.classList.add("animate");
+    } else {
+      output.innerText = "⚠️ Please enter a chant!";
+    }
+  });
+</script>
+
 
 </body>
 </html>
