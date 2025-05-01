@@ -50,8 +50,6 @@ body {
 /* Chant Generator */
 .chant-generator {
   position: relative;
-  width: 100%;
-  min-height: 60vh;
   background: url('https://media.istockphoto.com/id/470614728/photo/fans-at-stadium.jpg?s=612x612&w=0&k=20&c=G16U7ACoPtV-t_Wf-htXbik9PwOlShrdPPp_iR2iFqo=.jpg') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
