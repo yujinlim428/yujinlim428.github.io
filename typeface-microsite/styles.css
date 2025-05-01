@@ -107,32 +107,6 @@ body {
   margin: 0 auto;     /* 화면 가운데에 위치하되 내용은 왼쪽 정렬 */
 }
 
-.type-title {
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.4;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.tooltip {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: #999;
-  max-width: 100%;
-}
-
-.font-highlight {
-  color: #ffcc00;
-}
-
-.type-description {
-  font-size: 2rem;
-  color: #ddd;
-  margin-bottom: 1rem;
-}
-
 .type-body {
   font-size: 10rem;
   letter-spacing: 4px;
