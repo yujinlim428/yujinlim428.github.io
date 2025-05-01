@@ -106,7 +106,7 @@ body {
 }
 
 .type-title {
-  font-size: 2rem;
+  font-size: 5rem;
   font-weight: bold;
   max-width: 800px;  /* 너무 길지 않게 */
   line-height: 1.4;
