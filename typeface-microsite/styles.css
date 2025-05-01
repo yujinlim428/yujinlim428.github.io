@@ -13,20 +13,66 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
   overflow-x: hidden;
+  padding-top: 40px;
 }
 
-header h1 {
-  font-size: 2.5rem;
+/* Heading Stadium Track */
+.stadium-heading {
+  position: relative;
+  display: inline-block;
+  padding: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.stadium-heading:hover {
+  transform: scale(1.03);
+}
+
+.stadium-heading h1 {
+  font-size: 2.8rem;
   font-style: italic;
   color: #ffcc00;
-  text-align: center;
-  margin-bottom: 20px;
   letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
 }
 
+.track-shape {
+  position: absolute;
+  width: 120%;
+  height: 200%;
+  top: -50%;
+  left: -10%;
+  border: 6px solid transparent;
+  border-image: linear-gradient(135deg, #ffcc00, #ff0033, #ffcc00) 1;
+  border-radius: 100% / 60%;
+  z-index: 1;
+  animation: rotateTrack 10s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.track-shape.delay {
+  animation-delay: 2s;
+  opacity: 0.3;
+}
+
+@keyframes rotateTrack {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stadium Track Field */
 .stadium-track {
   position: relative;
   padding: 4rem;
@@ -44,6 +90,11 @@ header h1 {
   transition: transform 0.3s ease-in-out;
 }
 
+.stadium-track:hover {
+  transform: scale(1.01) rotate(-0.2deg);
+}
+
+/* Chant Input */
 .fun-input {
   font-family: 'Stadion', sans-serif;
   font-size: 1.5rem;
@@ -56,8 +107,14 @@ header h1 {
   color: #000;
   background: #fff100;
   font-style: italic;
+  transition: box-shadow 0.2s ease;
 }
 
+.fun-input:hover {
+  box-shadow: 0 0 10px #fff100;
+}
+
+/* Chant Button */
 .fun-button {
   font-family: 'Stadion', sans-serif;
   font-size: 1.5rem;
@@ -68,8 +125,18 @@ header h1 {
   color: white;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  position: relative;
   font-style: italic;
+  position: relative;
+}
+
+.fun-button::after {
+  content: "🏃‍♂️";
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .fun-button:hover {
@@ -78,6 +145,12 @@ header h1 {
   box-shadow: 0 0 20px #ff3300;
 }
 
+.fun-button:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
+}
+
+/* Chant Output */
 .chant-output {
   font-size: 2rem;
   color: #fff100;
@@ -85,6 +158,7 @@ header h1 {
   text-align: center;
   max-width: 90%;
   transition: transform 0.3s ease;
+  text-shadow: 2px 2px #ff0033;
 }
 
 .chant-output.animate {
