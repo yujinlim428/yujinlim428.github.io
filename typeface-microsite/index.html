@@ -13,6 +13,25 @@
   <!-- Background Track -->
 <div class="stadium-track"></div>
 
+ <!-- Chant Generator Script -->
+ <script>
+  const button = document.getElementById("chant-button");
+  const input = document.getElementById("chant-input");
+  const output = document.getElementById("chant-output");
+
+
+  button.addEventListener("click", () => {
+    const chant = input.value.trim();
+    if (chant) {
+      output.innerText = chant.toUpperCase();
+      output.classList.remove("animate");
+      void output.offsetWidth; // forces reflow for animation restart
+      output.classList.add("animate");
+    } else {
+      output.innerText = "⚠️ Please enter a chant!";
+    }
+  });
+</script>
 
   <!-- Header -->
   <header class="stadium-heading">
@@ -41,7 +60,12 @@
 
     <section class="chant-display" aria-live="polite">
       <div id="chant-output" class="chant-output" aria-label="Chant Output"></div>
-      <img src="https://images.pexels.com/photos/13069970/pexels-photo-13069970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.jpg" alt="Fans cheering at the stadium" class="chant-image" />
+      <img 
+  src="https://images.pexels.com/photos/13069970/pexels-photo-13069970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.jpg" 
+  alt="Fans cheering at the stadium" 
+  class="chant-image" 
+  title="sports game"
+/>
     </section>
 
 
@@ -61,25 +85,6 @@
 </section>
 
 
- <!-- Chant Generator Script -->
- <script>
-  const button = document.getElementById("chant-button");
-  const input = document.getElementById("chant-input");
-  const output = document.getElementById("chant-output");
-
-
-  button.addEventListener("click", () => {
-    const chant = input.value.trim();
-    if (chant) {
-      output.innerText = chant.toUpperCase();
-      output.classList.remove("animate");
-      void output.offsetWidth; // forces reflow for animation restart
-      output.classList.add("animate");
-    } else {
-      output.innerText = "⚠️ Please enter a chant!";
-    }
-  });
-</script>
 
 
 </body>
