@@ -2,92 +2,94 @@
   font-family: 'Stadion';
   src: url('Stadion.woff2') format('woff2');
   font-weight: normal;
-  font-style: italic;
+  font-style: normal;
 }
 
 body {
-  background: linear-gradient(135deg, #111, #222, #111);
-  background-size: 400% 400%;
-  animation: bgMove 8s ease infinite;
-}
-
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-  
-}
-
-@keyframes chantPulse {
-  0%, 100% { text-shadow: 0 0 5px #00ffea, 0 0 10px #ffaa00; }
-  50% { text-shadow: 0 0 20px #ffaa00, 0 0 30px #ff0055; }
-}
-
-.animate {
-  animation: chantPulse 1s ease-in-out;
+  font-family: 'Stadion', sans-serif;
+  background: linear-gradient(135deg, #ffd6e8, #c3f8ff);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  overflow: hidden;
 }
 
 header h1 {
-  font-family: 'Stadion', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2.8em;
+  color: #ff4d6d;
+  margin-bottom: 40px;
+  animation: bounce 1.5s ease infinite alternate;
 }
 
-input {
-  font-family: Anton, sans-serif;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  width: 60%;
-  max-width: 500px;
+input.fun-input {
+  padding: 14px 20px;
   border: none;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border-radius: 30px;
+  font-size: 1.2em;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  outline: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-button {
-  font-family: Anton, sans-serif;
-  display: block;
-  margin: 1rem auto;
-  font-size: 1.25rem;
-  font-weight: bold;
-  padding: 0.75rem 1.5rem;
-  background-color: crimson;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-button:hover {
+input.fun-input:focus {
   transform: scale(1.05);
+  box-shadow: 0 0 10px #ff4d6d;
 }
 
-#chant-output {
-  margin-top: 2rem;
-  font-family: 'Stadion', sans-serif;
-  font-size: 4rem;
-  color: #00ffea;
+button.fun-button {
+  padding: 14px 30px;
+  font-size: 1.1em;
+  background-color: #7afcff;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+button.fun-button:hover {
+  background-color: #ff4d6d;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.chant-output {
+  margin-top: 40px;
+  font-size: 2em;
+  color: #333;
+  padding: 20px;
   animation: none;
 }
 
 .animate {
-  animation: chantAnim 1s ease-in-out forwards;
+  animation: pop 0.5s ease-out;
 }
 
-@keyframes chantAnim {
+/* Animations */
+@keyframes pop {
   0% {
-    transform: scale(0.8) rotate(-2deg);
+    transform: scale(0.5);
     opacity: 0;
-    color: #ff0055;
-  }
-  50% {
-    transform: scale(1.2) rotate(2deg);
-    color: #ffaa00;
   }
   100% {
-    transform: scale(1) rotate(0deg);
+    transform: scale(1);
     opacity: 1;
-    color: #00ffea;
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
   }
 }
