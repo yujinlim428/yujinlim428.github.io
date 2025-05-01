@@ -1,86 +1,59 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Baloo 2', cursive;
-    background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, #f9d5ec, #d0e8f2);
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .container {
     text-align: center;
-    background: #fff;
-    padding: 2.5rem;
-    border-radius: 2.5rem;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    animation: bounceIn 0.9s ease;
-    max-width: 90%;
-    width: 500px;
-  }
-  
-  h1 {
-    color: #ff69b4;
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .link-list {
+    padding: 50px;
+    margin: 0;
+ }
+ 
+ .container {
+    background-color: #ffffffcc;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+ }
+ 
+ h1 {
+    font-size: 2.5em;
+    color: #ff6ec7;
+    margin-bottom: 30px;
+ }
+ 
+ ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-  }
-  
-  .link-list li {
-    margin: 1rem 0;
-  }
-  
-  a {
+ }
+ 
+ li {
+    margin: 15px 0;
+ }
+ 
+ a {
     text-decoration: none;
-    color: white;
-    background-color: #6a5acd;
-    padding: 0.75rem 1.7rem;
-    border-radius: 50px;
-    display: inline-block;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 10px rgba(106, 90, 205, 0.2);
+    font-size: 1.2em;
+    background-color: #ffcd4b;
+    color: #2c2c2c;
+    padding: 12px 24px;
+    border-radius: 12px;
     transition: all 0.3s ease;
-  }
-  
-  a:hover {
-    transform: translateY(-3px) scale(1.05);
-    background-color: #ff69b4;
-    box-shadow: 0 6px 14px rgba(255, 105, 180, 0.3);
-  }
-  
-  img {
-    margin-top: 2rem;
+    display: inline-block;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+ }
+ 
+ a:hover {
+    background-color: #ff6ec7;
+    color: white;
+    transform: scale(1.05);
+ }
+ 
+ img {
     width: 100px;
+    margin-top: 30px;
     border-radius: 50%;
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-  
-  @keyframes bounceIn {
-    0% {
-      transform: scale(0.5);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
+    border: 4px dashed #a3e4db;
+    padding: 10px;
+    background-color: #fff;
+ }
