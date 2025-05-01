@@ -96,11 +96,33 @@ body {
   min-height: 2.5rem;
  }
  
- .chant-image {
+ .chant-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.chant-image {
   display: block;
-  margin: 2rem auto 0 auto; /* 위는 여백, 좌우는 자동으로 중앙 정렬 */
+  margin: 2rem auto 0 auto;
   max-width: 100%;
   height: auto;
+}
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* 글자가 클릭 방해하지 않도록 */
+}
+
+.chant-image-wrapper:hover .hover-text {
+  opacity: 1;
 }
  
 
