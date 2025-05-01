@@ -6,11 +6,25 @@
 }
 
 body {
-  background: black;
-  color: white;
-  font-family: sans-serif;
-  text-align: center;
-  padding: 2rem;
+  background: linear-gradient(135deg, #111, #222, #111);
+  background-size: 400% 400%;
+  animation: bgMove 8s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  
+}
+
+@keyframes chantPulse {
+  0%, 100% { text-shadow: 0 0 5px #00ffea, 0 0 10px #ffaa00; }
+  50% { text-shadow: 0 0 20px #ffaa00, 0 0 30px #ff0055; }
+}
+
+.animate {
+  animation: chantPulse 1s ease-in-out;
 }
 
 header h1 {
