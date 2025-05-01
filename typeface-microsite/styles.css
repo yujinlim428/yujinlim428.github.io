@@ -114,6 +114,12 @@ body {
   color: #ffcc00;
 }
 
+.tooltip {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-left: 0.5rem;
+}
 
 .type-description {
   font-size: 2rem;
