@@ -97,29 +97,30 @@ body {
 /* Typeface Introduction */
 
 .type-intro {
-  text-align: center;   /* 섹션 안의 텍스트 전체 중앙 정렬 */
+  text-align: left;   /* 왼쪽 정렬 */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;  /* 왼쪽에 고정 */
   justify-content: center;
   padding: 40px 20px;
+  max-width: 800px;   /* 너무 넓어지지 않게 */
+  margin: 0 auto;     /* 화면 가운데에 위치하되 내용은 왼쪽 정렬 */
 }
 
 .type-title {
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: bold;
-  max-width: 800px;  /* 너무 길지 않게 */
   line-height: 1.4;
   position: relative;
+  margin-bottom: 10px;
 }
 
-/* 추가: tooltip이 중앙에서 잘 작동하도록 */
 .tooltip {
   display: block;
   margin-top: 10px;
   font-size: 0.9rem;
   color: #999;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .font-highlight {
