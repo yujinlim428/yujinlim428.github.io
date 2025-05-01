@@ -3,17 +3,15 @@
   src: url('Stadion.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
- }
- 
- 
- * {
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- }
- 
- 
- body {
+}
+
+body {
   font-family: 'Stadion', sans-serif;
   background: radial-gradient(circle at center, #1a1a1a 30%, #000 100%);
   overflow-x: hidden;
@@ -25,74 +23,93 @@
   justify-content: start;
   padding: 2rem;
   line-height: 1.6;
- }
- 
- 
- 
- 
- 
- 
- /* Header Section */
- .stadium-heading {
+}
+
+
+
+/* Header Section */
+.stadium-heading {
   text-align: center;
   margin-bottom: 2rem;
- }
- 
- 
- .stadium-heading h1 {
-  font-size: 2.5rem;
+}
+
+.stadium-heading h1 {
+  font-size: 3rem;
   text-transform: uppercase;
   color: #ffcc00;
   letter-spacing: 2px;
   animation: pulse 2s infinite ease-in-out;
- }
- 
- 
- .tagline {
+}
+
+.tagline {
   font-size: 1rem;
   color: #ccc;
   margin-top: 0.5rem;
- }
- 
- 
- /* Chant Generator */
- .chant-generator {
-  position: relative;
+}
+
+/* Chant Generator */
+.stadium-main {
+  max-width: 600px;
   width: 100%;
-  min-height: 60vh;
-  background: url('https://images.pexels.com/photos/13069970/pexels-photo-13069970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.jpg') center center / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  z-index: 1;
+  text-align: center;
+  margin-bottom: 3rem;
  }
  
  
- .chant-generator::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* 어두운 반투명 오버레이 */
-  z-index: 0;
+ .fun-input {
+  width: 80%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  outline: none;
+  background-color: #222;
+  color: #fff;
  }
  
  
- .chant-generator input,
- .chant-generator button {
-  position: relative;
-  z-index: 1; /* 오버레이 위로 올라오게 */
+ .fun-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
  }
  
  
- /* Chant animation */
- .animate {
+ .fun-button:hover {
+  background-color: #ffaa00;
+ }
+ 
+ 
+ .chant-output {
+  margin-top: 1.5rem;
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #00ffcc;
+  min-height: 2.5rem;
+ }
+ 
+ .chant-image {
+  display: block;
+  margin: 2rem auto 0 auto; /* 위는 여백, 좌우는 자동으로 중앙 정렬 */
+  max-width: 100%;
+  height: auto;
+}
+ 
+
+/* Chant animation */
+.animate {
   animation: chant-pop 0.6s ease-out;
- }
- 
- 
- @keyframes chant-pop {
+}
+
+@keyframes chant-pop {
   0% {
     transform: scale(0.8);
     opacity: 0;
@@ -104,103 +121,90 @@
   100% {
     transform: scale(1);
   }
- }
- 
- 
- 
- 
- .stadium-overlay-title {
+}
+
+
+.stadium-overlay-title {
   font-size: 70px;
   font-weight: bold;
- }
- 
- 
- 
- 
- /* Typeface Introduction */
- 
- 
- .stadium-overlay-subtext {
+}
+
+
+/* Typeface Introduction */
+
+.stadium-overlay-subtext {
   font-size: 14px;
- }
- 
- 
- .type-body {
+}
+
+.type-body {
   font-size: 10rem;
   letter-spacing: 4px;
   color: #ffcc00;
   white-space: nowrap;  /* 줄바꿈 방지 */
   display: inline-block;
   animation: slideLR 6s linear infinite alternate;
- }
- 
- 
- /* 애니메이션 키프레임 */
- @keyframes slideLR {
+}
+
+/* 애니메이션 키프레임 */
+@keyframes slideLR {
   0% {
-    transform: translateX(-100%);  /* 화면 왼쪽 바깥으로 시작 */
+    transform: translateX(-100%); 
     opacity: 0;
   }
   10% {
-    opacity: 1;  /* 안으로 들어오면서 보임 */
+    opacity: 1;
   }
   45% {
-    transform: translateX(100%);  /* 화면 오른쪽 끝으로 나감 */
+    transform: translateX(100%); 
     opacity: 1;
   }
   50% {
-    opacity: 0;  /* 완전히 나가면 숨김 */
   }
   55% {
-    opacity: 0;  /* 오른쪽 끝에서 다시 왼쪽으로 오기 준비 */
-    transform: translateX(100%);  /* 오른쪽에서 시작 */
+    opacity: 0;  
+    transform: translateX(100%);  
   }
   65% {
-    opacity: 1;  /* 들어오면서 보임 */
+    opacity: 1;  
   }
   100% {
     transform: translateX(-100%);  /* 다시 왼쪽으로 나감 */
     opacity: 1;
   }
- }
- 
- 
- /* Accessibility */
- .visually-hidden {
+}
+
+/* Accessibility */
+.visually-hidden {
   position: absolute;
   left: -10000px;
   top: auto;
   width: 1px;
   height: 1px;
   overflow: hidden;
- }
- 
- 
- /* Animation: header pulse */
- @keyframes pulse {
+}
+
+/* Animation: header pulse */
+@keyframes pulse {
   0%, 100% {
     text-shadow: 0 0 5px #ffcc00;
   }
   50% {
     text-shadow: 0 0 15px #ffaa00, 0 0 30px #ffaa00;
   }
- }
- 
- 
- /* Responsive Design */
- @media (max-width: 600px) {
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
   .fun-input {
     width: 100%;
   }
- 
- 
+
   .chant-output {
     font-size: 1.5rem;
   }
- 
- 
+
   .stadium-heading h1 {
     font-size: 1.8rem;
   }
- }
- 
+}
+
